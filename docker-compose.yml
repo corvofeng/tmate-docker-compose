@@ -21,7 +21,7 @@ services:
       HAS_WEBSOCKET: 1
       SSH_HOSTNAME: ${EXTERNAL_FQDN}
       SSH_PORT_LISTEN: 22
-      SSH_PORT_ADVERTISE: 3322
+      SSH_PORT_ADVERTISE: 22
     command:
       # - -a/keys/authorized_keys
       - -wwebsocket
@@ -40,7 +40,7 @@ services:
       INTERNAL_API_AUTH_TOKEN: *internal_api_auth_token
       ERL_NODE_NAME: erl_node_name
       ERL_COOKIE: erl_cookie
-    # expose: [4002]
+    expose: [4001]
     ports: ["0.0.0.0:4001:4001"]
   postgres:
     # image: postgres:11-alpine

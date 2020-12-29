@@ -1,0 +1,20 @@
+trigger:
+- master
+
+pool: AliDeploy
+
+variables:
+  tmatedir: /home/azure/Workspaces/tmate/
+
+steps:
+- script: echo "$(blogdir)"
+  displayName: 'Run a one-line script'
+
+- script: |
+    pwd
+    echo "$(System.DefaultWorkingDirectory)"
+  displayName: 'pwd and echo dir'
+
+- script: |
+    rsync --delete -rv $(System.DefaultWorkingDirectory)/docker-compose.yml $(tmatedir)
+  displayName: 'Sync the tmate deploy file'

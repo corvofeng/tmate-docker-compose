@@ -3,3 +3,4 @@ INTERNAL_API_AUTH_TOKEN=internal_api_auth_token
 DAEMON_HMAC_KEY=VlCkxXLjzaFravvNSPpOdoAffaQHRNVHeSBNWUcfLDYTYHuaYQsWwyCjrSJAJUSr
 POSTGRES_PASSWORD=tmate
 EXTERNAL_FQDN=tmate.koralsky.pl
+PG_URI=pg://tmate:${POSTGRES_PASSWORD}@postgres:5432/tmate

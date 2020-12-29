@@ -17,4 +17,5 @@ steps:
 
 - script: |
     rsync --delete -rv $(System.DefaultWorkingDirectory)/docker-compose.yml $(tmatedir)
+    rsync --delete -rv $(System.DefaultWorkingDirectory)/create_keys.sh $(tmatedir)
   displayName: 'Sync the tmate deploy file'
